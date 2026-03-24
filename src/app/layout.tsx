@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     "Altamark turns fragmented supplier data into verified intelligence. AI ingests, extracts, verifies, and monitors — from raw data to verified signals. Onboard, Verify, Monitor.",
   icons: {
     icon: [
-      { url: "/altamark-logo-icon.png", sizes: "32x32", type: "image/png" },
-      { url: "/altamark-logo-icon.png", sizes: "16x16", type: "image/png" },
+      { url: "/altamark-logo-full.png", sizes: "32x32", type: "image/png" },
+      { url: "/altamark-logo-full.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: { url: "/altamark-logo-icon.png", sizes: "180x180", type: "image/png" },
+    apple: { url: "/altamark-logo-full.png", sizes: "180x180", type: "image/png" },
   },
   keywords: [
     "supplier intelligence",

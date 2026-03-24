@@ -8,49 +8,38 @@ interface AltamarkLogoProps {
   className?: string;
 }
 
+const LOGO_SRC = "/altamark-logo-full.png";
+
+/** Box sizes (object-contain keeps the asset crisp; horizontal logo may letterbox in tight heights). */
 const sizeConfig = {
   full: {
-    sm: { width: 100, cropHeight: 26 },
-    md: { width: 130, cropHeight: 34 },
-    lg: { width: 160, cropHeight: 42 },
+    sm: { width: 108, height: 28 },
+    md: { width: 140, height: 36 },
+    lg: { width: 176, height: 44 },
   },
   icon: {
-    sm: { width: 24, height: 24 },
-    md: { width: 32, height: 32 },
-    lg: { width: 40, height: 40 },
+    sm: { width: 72, height: 22 },
+    md: { width: 96, height: 28 },
+    lg: { width: 112, height: 32 },
   },
-};
+} as const;
 
 export default function AltamarkLogo({
   variant = "full",
   size = "md",
   className = "",
 }: AltamarkLogoProps) {
-  if (variant === "icon") {
-    const iconDims = sizeConfig.icon[size];
-    return (
-      <Image
-        src="/altamark-logo-icon.png"
-        alt="Altamark"
-        width={iconDims.width}
-        height={iconDims.height}
-        className={`shrink-0 object-contain ${className}`}
-        priority
-        sizes={`${iconDims.width}px`}
-      />
-    );
-  }
+  const dims = sizeConfig[variant][size];
 
-  const fullDims = sizeConfig.full[size];
   return (
     <Image
-      src="/altamark-logo-horizontal.png"
+      src={LOGO_SRC}
       alt="Altamark"
-      width={fullDims.width}
-      height={fullDims.cropHeight}
+      width={dims.width}
+      height={dims.height}
       className={`shrink-0 object-contain object-left ${className}`}
       priority
-      sizes={`${fullDims.width}px`}
+      sizes={`${dims.width}px`}
     />
   );
 }
